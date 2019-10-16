@@ -1,6 +1,6 @@
 from pandas import read_csv
 from numpy import set_printoptions
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import Normalizer
 
 file_name = "/Users/ramideltoro/ml/diabetes.csv"
 raw_data = open(file_name, 'rt')
@@ -15,7 +15,7 @@ data_array = data.values
 input_array = data_array[:,0:8]
 output_array = data_array[:,8]
 
-scaler = StandardScaler().fit(input_array)
+scaler = Normalizer().fit(input_array)
 
 rescaled_input_array = scaler.transform(input_array)
 
